@@ -58,7 +58,7 @@ uint32_t update_prev_loaded_memcard_index(uint32_t index) {
 		}else{
 			f_rewind(&data_file);
 			strcat(finalname, "LASTMEMCARD:");
-			sprintf(buff,"%03d",index);
+			sprintf(buff,"000");
 			strcat(finalname, buff);
 			strcat(finalname, ".MCR\n");
 			printf("%s\n", finalname);
@@ -431,7 +431,7 @@ uint32_t create_index(uint8_t *vec, uint8_t size, uint8_t *out_filename){
 				//updating lastmemcard id
 				f_rewind(&fptr);
 				strcat(lastmem, "LASTMEMCARD:");
-				sprintf(buff, "%03d", atoi(new_name));
+				sprintf(buff, "000");
 				strcat(lastmem, buff);
 				strcat(lastmem, ".MCR\n");
 				f_puts(lastmem, &fptr);
